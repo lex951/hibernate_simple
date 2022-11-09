@@ -1,21 +1,23 @@
 <hibernate-configuration>
     <session-factory>
-        <!--  JDBC Database connection settings  -->
+        <!--        Настройки JDBC -->
         <property name="connection.driver_class">com.mysql.cj.jdbc.Driver</property>
-        <property name="connection.url">jdbc:mysql://localhost:3306/aston_test</property>
+        <property name="connection.url">jdbc:mysql://localhost:3306/teams</property>
         <property name="connection.username">root</property>
         <property name="connection.password">testtest</property>
-        <!--  JDBC connection pool settings ... using built-in test pool  -->
+        <!--  Можно задать размер пула соединений, по умолчанию 20?  -->
         <property name="connection.pool_size">10</property>
-
+        <!-- Показывает в консоли SQL запросы -->
         <property name="show_sql">true</property>
-        <!--  Set the current session context  -->
+        <!--  Надо повторить  -->
         <property name="current_session_context_class">thread</property>
-        <!--  Drop and re-create the database schema on startup  -->
+        <!--  Стратегия при старте ???  -->
         <property name="hbm2ddl.auto">create</property>
-        <mapping class="org.teams.domain.Coach"/>
-        <mapping class="org.teams.domain.Player"/>
-        <mapping class="org.teams.domain.Team"/>
+        <!-- POJO классы для маппинга-->
+        <mapping class="org.teams.entity.Coach"/>
+        <mapping class="org.teams.entity.Player"/>
+        <mapping class="org.teams.entity.Team"/>
+
 
     </session-factory>
 </hibernate-configuration>
